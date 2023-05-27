@@ -40,6 +40,12 @@ stages:
   - job: ProdDeployjob 
     steps:
     - bash: echo Build ProdDeployjob
+- stage:  OprDeploy
+  dependsOn: QaDeploy
+  jobs:
+  - job: OprDeploy
+    steps:
+    - bash: echo Build OprDeployjob  
 - stage:  End
   dependsOn: QaDeploy
   jobs:
